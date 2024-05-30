@@ -6,6 +6,21 @@ const movieSchema= new Schema({
         type: String,
         required: true
     },
+    length:{
+        type: Number,
+        required: true
+    },
+
+    date:{
+        type: String,
+        required: true
+    },
+
+    description:{
+        type: String,
+        required: true
+    },
+    
 
     rating:{
         type: Number,

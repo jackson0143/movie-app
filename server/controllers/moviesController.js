@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 
 //get all movies
 const getMovies = async(req, res) => {
-    const movies = await Movies.find({}).sort({createdAt: -1})
+    const movies = await Movies.find({})
 
     res.status(200).json(movies)
 }
@@ -27,10 +27,10 @@ const getMovie = async(req, res) => {
 
 //create movie
 const createMovie = async(req, res) =>{
-    const {title, rating} = req.body
+    const {title, length, date, description, rating} = req.body
 
     try{
-        const movie = await Movies.create({title, rating})
+        const movie = await Movies.create({title, length, date, description, rating})
         res.status(200).json(movie)
     } catch (error){
         res.status(404).json({error: error.message})
