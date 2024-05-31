@@ -11,6 +11,7 @@ import ContactUs from "./pages/ContactUs";
 import Faq from "./pages/Faq";
 import MovieDetails from "./pages/MovieDetails";
 import SideNav from "./components/SideNav";
+import Profile from "./pages/Profile";
 
 function App() {
   const { user } = useAuthContext();
@@ -34,6 +35,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={!user ? <Login /> : <Navigate to="/" />} />
               <Route path="/signup" element={!user ? <Signup /> : <Navigate to="/" />} />
+              <Route path="/profile" element={<Profile />} />
               <Route path="/movies/:id" element={<MovieDetails />} />
               <Route path="/contact-us" element={<ContactUs />} />
               <Route path="/faq" element={<Faq />} />

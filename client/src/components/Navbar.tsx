@@ -1,12 +1,16 @@
 import { useLogout } from "../hooks/useLogout";
 import { useAuthContext } from "../hooks/useAuthContext";
+import { ProfileMenu } from "./ProfileMenu";
 
 function Navbar() {
   const { logout } = useLogout();
   const { user } = useAuthContext();
 
   return (
+    
     <nav>
+   
+
       <div className="">
         <div className="flex justify-between h-16 px-10 shadow items-center">
           <a href="/" className="text-xl lg:text-2xl font-bold cursor-pointer">
@@ -42,7 +46,12 @@ function Navbar() {
           <div className="flex items-center space-x-4">
             {user && (
               <>
-                <span>{user.email}</span>
+                  <ProfileMenu></ProfileMenu>
+              
+
+
+
+              
                 <a
                   onClick={logout}
                   className="bg-indigo-600 px-4 py-2 rounded text-white hover:bg-indigo-500 text-sm cursor-pointer"
@@ -69,6 +78,7 @@ function Navbar() {
           </div>
         </div>
       </div>
+      
     </nav>
   );
 }
