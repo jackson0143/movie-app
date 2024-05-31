@@ -1,6 +1,7 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import Navbar from './components/Navbar'
+import { BrowserRouter, Routes, Route, Navigate,useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useAuthContext } from "./hooks/useAuthContext";
+import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -8,21 +9,22 @@ import Movies from "./pages/Movies";
 import NewMovie from "./pages/NewMovie";
 
 function App() {
+
+  const {user} = useAuthContext()
+
   return (
     <>
       <BrowserRouter>
+        <Navbar />
 
-        <Navbar/>
-      
-          <Routes>
-            <Route path = "/" element = {<Home/>}></Route>
-            <Route path = "/login" element = {<Login/>}></Route>
-            <Route path = "/signup" element = {<Signup/>}></Route>
-            <Route path = "/movies" element = {<Movies/>}></Route>
+        <Routes>
+          <Route path="/" element={ <Home /> }></Route>
+          <Route path="/login" element={!user ? <Login />: <Navigate to="/" />}></Route>
+          <Route path="/signup" element={!user ? <Signup />:<Navigate to="/" /> }></Route>
+          <Route path="/movies" element={<Movies />}></Route>
 
-            <Route path = "/newmovie" element = {<NewMovie/>}></Route>
-          </Routes>
-  
+          <Route path="/newmovie" element={<NewMovie />}></Route>
+        </Routes>
       </BrowserRouter>
     </>
   );

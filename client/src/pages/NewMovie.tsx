@@ -16,7 +16,6 @@ function NewMovie() {
     e.preventDefault()
 
     const movie = {title, length, date, description, rating}
-
     
     const response = await fetch('http://localhost:5050/api/movies', {
       method:'POST',
