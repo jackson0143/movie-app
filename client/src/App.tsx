@@ -1,5 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate,useNavigate } from "react-router-dom";
-
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useAuthContext } from "./hooks/useAuthContext";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -10,26 +9,42 @@ import Movies from "./pages/Movies";
 import NewMovie from "./pages/NewMovie";
 import ContactUs from "./pages/ContactUs";
 import Faq from "./pages/Faq";
+import MovieDetails from "./pages/MovieDetails";
+import SideNav from "./components/SideNav";
 
 function App() {
+  const { user } = useAuthContext();
 
-  const {user} = useAuthContext()
   return (
     <>
       <BrowserRouter>
         <Navbar />
+        <div className="flex">
+          <SideNav/>
+         
+          {/*Perhaps create a grid and reserve left and right side for sidenav, remaining with middle space */}
+      
+            
+           
+        
 
-        <Routes>
-          <Route path="/" element={ <Home /> }></Route>
-          <Route path="/login" element={!user ? <Login />: <Navigate to="/" />}></Route>
-          <Route path="/signup" element={!user ? <Signup />:<Navigate to="/" /> }></Route>
-          <Route path="/movies" element={<Movies />}></Route>
-          <Route path="/contact-us" element={<ContactUs/>}></Route>
-          <Route path="/faq" element={<Faq/>}></Route>
-          <Route path="/newmovie" element={<NewMovie />}></Route>
-        </Routes>
-
-        <Footer/>
+            <div className=" w-full  ">  
+            <Routes>
+            <Route path="/movies" element={<Movies />} />
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={!user ? <Login /> : <Navigate to="/" />} />
+              <Route path="/signup" element={!user ? <Signup /> : <Navigate to="/" />} />
+              <Route path="/movies/:id" element={<MovieDetails />} />
+              <Route path="/contact-us" element={<ContactUs />} />
+              <Route path="/faq" element={<Faq />} />
+              <Route path="/newmovie" element={<NewMovie />} />
+              
+            </Routes>
+          </div>
+         
+          
+        </div>
+        <Footer />
       </BrowserRouter>
     </>
   );

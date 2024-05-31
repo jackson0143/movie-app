@@ -25,6 +25,10 @@ const movieSchema= new Schema({
     rating:{
         type: Number,
         required: true
+    },
+    trailer:{
+        type:String,
+        required: false
     }
 }, { timestamps: true })
 
