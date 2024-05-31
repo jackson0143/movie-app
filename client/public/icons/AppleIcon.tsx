@@ -3,7 +3,7 @@ import React from 'react'
 function AppleIcon() {
   return (
     <svg
-    className="w-5 h-5 me-2 -ms-1"
+    className="w-4 h-5 me-2"
     aria-hidden="true"
     focusable="false"
     data-prefix="fab"
