@@ -51,11 +51,12 @@ function Footer() {
           </li>
         </ul>
         <div className="flex space-x-10 justify-center items-center mb-14">
-          <XIcon />
-          <InstagramIcon />
-          <FacebookIcon />
-          <YoutubeIcon />
+          <XIcon></XIcon>
+          <InstagramIcon></InstagramIcon>
+          <FacebookIcon></FacebookIcon>
+          <YoutubeIcon></YoutubeIcon>
         </div>
+
         <span className="text-lg text-gray-500 text-center block">
           Copyright © 2024 Jackson. All Rights Reserved 2024, All rights
           reserved.

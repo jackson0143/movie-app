@@ -16,6 +16,7 @@ export const useLogin = () => {
       headers: { "Content-Type": "application/json" },
     });
     const json = await response.json();
+    console.log(json)
 
     if (!response.ok) {
       setIsLoading(false);
@@ -25,7 +26,7 @@ export const useLogin = () => {
     if (response.ok){
         //save user to local storage
         localStorage.setItem('user', JSON.stringify(json))
-
+        
         //update auth context
         dispatch({type:'LOGIN', payload: json})
         setIsLoading(false)

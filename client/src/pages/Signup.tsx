@@ -5,6 +5,8 @@ import SocialButton from "../components/SocialButton";
 import GoogleIcon from "../../public/icons/GoogleIcon";
 import FacebookIcon from "../../public/icons/FacebookIcon";
 import AppleIcon from "../../public/icons/AppleIcon";
+
+import { useGoogleLoginFunction } from "../hooks/useGoogleLogin";
 //import socialButton from "../components/socialButton"
 function Signup() {
   const [email, setEmail] = useState("");
@@ -14,7 +16,7 @@ function Signup() {
 
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
-
+  const { loginUsingGoogle } = useGoogleLoginFunction();
   const { signup, error, isLoading } = useSignup();
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,12 +28,13 @@ function Signup() {
       <h1 className="text-4xl font-medium">Sign up to an account</h1>
 
       <div className="my-5">
-      <SocialButton
+        <SocialButton
           bgColor="bg-[#4285F4]"
           hoverColor="hover:bg-[#4285F4]/90"
           focusRingColor="focus:ring-[#4285F4]/50"
           icon={<GoogleIcon></GoogleIcon>}
           text="Sign in with Google"
+          onClickFunction={() => loginUsingGoogle()}
         />
 
         <SocialButton
@@ -47,8 +50,6 @@ function Signup() {
           focusRingColor="focus:ring-[#050708]/50"
           icon={<AppleIcon />}
           text="Sign in with Apple"
-
-          
         />
       </div>
       <form onSubmit={handleSubmit} className="my-10">

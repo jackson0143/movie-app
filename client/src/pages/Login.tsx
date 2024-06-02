@@ -5,10 +5,18 @@ import GoogleIcon from "../../public/icons/GoogleIcon";
 import FacebookIcon from "../../public/icons/FacebookIcon";
 import AppleIcon from "../../public/icons/AppleIcon";
 
+
+
+import { useGoogleLoginFunction } from "../hooks/useGoogleLogin";
+const responseFacebook = (response) => {
+  console.log(response);
+}
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { login, error, isLoading } = useLogin();
+
+  const { loginUsingGoogle } = useGoogleLoginFunction();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,7 +34,13 @@ function Login() {
           focusRingColor="focus:ring-[#4285F4]/50"
           icon={<GoogleIcon></GoogleIcon>}
           text="Sign in with Google"
+          onClickFunction={() => loginUsingGoogle()}
         />
+
+
+
+
+
 
         <SocialButton
           bgColor="bg-[#3b5998]"
@@ -41,8 +55,6 @@ function Login() {
           focusRingColor="focus:ring-[#050708]/50"
           icon={<AppleIcon />}
           text="Sign in with Apple"
-
-          
         />
       </div>
       <form onSubmit={handleSubmit} className="my-10">

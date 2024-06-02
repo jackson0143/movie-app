@@ -33,8 +33,8 @@ function App() {
             <Routes>
             <Route path="/movies" element={<Movies />} />
               <Route path="/" element={<Home />} />
-              <Route path="/login" element={!user ? <Login /> : <Navigate to="/" />} />
-              <Route path="/signup" element={!user ? <Signup /> : <Navigate to="/" />} />
+              <Route path="/login" element={!user ? <Login /> : <Navigate to="/movies" />} />
+              <Route path="/signup" element={!user ? <Signup /> : <Navigate to="/movies" />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/movies/:id" element={<MovieDetails />} />
               <Route path="/contact-us" element={<ContactUs />} />

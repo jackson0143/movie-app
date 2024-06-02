@@ -1,5 +1,3 @@
-import React from 'react'
-
 function xIcon() {
   return (
     <a href="#" className="block  text-gray-900 transition-all duration-500 hover:text-indigo-600 ">
