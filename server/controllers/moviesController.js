@@ -27,6 +27,8 @@ const getMovie = async(req, res) => {
 
 //create movie
 const createMovie = async(req, res) =>{
+
+    const {movie_id}= req.params
     const {title, length, date, description, rating} = req.body
 
     try{

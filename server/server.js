@@ -19,6 +19,7 @@ app.use(express.json());
 //Routes
 app.use('/api/movies', require('./routes/moviesRoute.js'))
 app.use('/api/users', require('./routes/userRoute.js'))
+app.use('/api/sessiontimes', require('./routes/sessionTimesRoute.js'))
 
 //Connect to DB
 mongoose.connect(process.env.ATLAS_URI)

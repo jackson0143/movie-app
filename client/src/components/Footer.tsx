@@ -1,7 +1,7 @@
-import FacebookIcon from "../../public/footerIcons/FacebookIcon";
-import InstagramIcon from "../../public/footerIcons/InstagramIcon";
-import XIcon from "../../public/footerIcons/xIcon";
-import YoutubeIcon from "../../public/footerIcons/YoutubeIcon";
+import FacebookIcon from "./footerIcons/FacebookIcon";
+import InstagramIcon from "./footerIcons/InstagramIcon";
+import XIcon from "./footerIcons/xIcon";
+import YoutubeIcon from "./footerIcons/YoutubeIcon";
 
 function Footer() {
   return (
@@ -50,11 +50,13 @@ function Footer() {
             </a>
           </li>
         </ul>
-        <div className="flex space-x-10 justify-center items-center mb-14">
+        <div className="flex flex-start space-x-10 justify-center items-center mb-14">
+         
           <XIcon></XIcon>
           <InstagramIcon></InstagramIcon>
           <FacebookIcon></FacebookIcon>
           <YoutubeIcon></YoutubeIcon>
+
         </div>
 
         <span className="text-lg text-gray-500 text-center block">
