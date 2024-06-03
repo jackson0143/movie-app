@@ -139,6 +139,7 @@ if(sessionTime){
           className={
             " items-center bg-transparent hover:bg-indigo-50 text-blue-700 font-semibold hover:text-blue-700 py-2   border border-indigo-500 hover:border-indigo-500 rounded"
           }
+          onClick={toggleDrawer}
         >
           <div className="">
             <div>12:00PM</div>
@@ -153,6 +154,7 @@ if(sessionTime){
           className={
             " items-center bg-transparent hover:bg-indigo-50 text-blue-700 font-semibold hover:text-blue-700 py-2  border border-indigo-500 hover:border-indigo-500 rounded"
           }
+          onClick={toggleDrawer}
         >
           <div className="">
             <div>2:00PM</div>
@@ -167,6 +169,7 @@ if(sessionTime){
           className={
             " bg-transparent hover:bg-indigo-50 text-blue-700 font-semibold hover:text-blue-700 py-2  border border-indigo-500 hover:border-indigo-500 rounded"
           }
+          onClick={toggleDrawer}
         >
           <div className="">
             <div>6:00PM</div>
@@ -178,6 +181,7 @@ if(sessionTime){
           className={
             "bg-transparent hover:bg-indigo-50 text-blue-700 font-semibold hover:text-blue-700  border border-indigo-500 hover:border-indigo-500 rounded"
           }
+          onClick={toggleDrawer}
         >
           <div className="">
             <div>9:00PM</div>
@@ -254,10 +258,11 @@ if(sessionTime){
 
             </p>
            
-            <button className="w-full py-3 font-medium text-white bg-indigo-600 hover:bg-indigo-500 rounded-lg border-indigo-500 hover:shadow inline-flex space-x-2 items-center justify-center">
+            <a className="w-full py-3 font-medium text-white bg-indigo-600 hover:bg-indigo-500 rounded-lg border-indigo-500 hover:shadow inline-flex space-x-2 items-center justify-center"
+            href="/proceed"
+            >
             PROCEED
-          </button>
-         
+          </a>        
           </div>
         </div>
       </div>
