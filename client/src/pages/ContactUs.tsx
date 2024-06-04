@@ -1,11 +1,16 @@
-import React, { useState } from "react";
-
+import React, { useState, useRef, useEffect } from "react";
+import emailjs from '@emailjs/browser';
+import { useAuthContext } from "../hooks/useAuthContext";
 function ContactUs() {
+  const { user } = useAuthContext();
+  const form = useRef();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState("");
+
+
 
   const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
@@ -14,11 +19,27 @@ function ContactUs() {
       setError("Please fill in all fields.");
       return;
     }
-
+    emailjs
+      .sendForm('service_6ez7559', 'template_rnsd60l', form.current, {
+        publicKey: 'LKs5nqDZ-DKuYw60u',
+      })
+      .then(
+        () => {
+          console.log('Email has been sent!');
+        },
+        (error) => {
+          console.log('Failed to send email!', error.text);
+        },
+      );
     setIsSubmitted(true);
     setError(""); // Clear the error
+   
+
   };
 
+
+  
+  
   return (
     <section className="body-font relative py-24">
       <div className="container mx-auto px-5">
@@ -27,8 +48,7 @@ function ContactUs() {
             Contact Us
           </h1>
           <p className="mx-auto text-base leading-relaxed text-gray-700">
-            Feel free to reach out to us! Whether you have a question, feedback,
-            or a collaboration proposal, we'd love to hear from you.
+            Feel free to reach out to us! Whether you have a question, or need help with a ticket purchase, please submit a form. Thank you!
           </p>
         </div>
 
@@ -38,14 +58,14 @@ function ContactUs() {
               Your form has been submitted. Thank you!
             </div>
           ) : (
-            <form onSubmit={handleSubmit}>
+            <form ref={form} onSubmit={handleSubmit}>
               <div className="-m-2 flex flex-wrap">
                 <div className="w-1/2 p-2">
                   <div className="relative">
                     <input
                       type="text"
-                      id="name"
-                      name="name"
+                      id="user_name"
+                      name="user_name"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       className="peer w-full rounded border border-gray-300 bg-white py-2 px-3 text-base leading-8 text-gray-900 placeholder-transparent outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900"
@@ -60,8 +80,8 @@ function ContactUs() {
                   <div className="relative">
                     <input
                       type="email"
-                      id="email"
-                      name="email"
+                      id="user_email"
+                      name="user_email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       className="peer w-full rounded border border-gray-300 bg-white py-2 px-3 text-base leading-8 text-gray-900 placeholder-transparent outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900"
@@ -78,7 +98,7 @@ function ContactUs() {
                     <textarea
                       id="message"
                       name="message"
-                      value={message}
+                      value={ message}
                       onChange={(e) => setMessage(e.target.value)}
                       className="peer h-32 w-full resize-none rounded border border-gray-300 bg-white py-2 px-3 text-base leading-6 text-gray-900 placeholder-transparent outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900"
                       placeholder="Message"
