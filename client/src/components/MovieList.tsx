@@ -28,7 +28,7 @@ function MovieList({movies}) {
             <div className="flex flex-row  max-w-5xl p-12 bg-white border border-gray-200 rounded-lg shadow-lg">
               <img
                 className="w-auto h-auto rounded-lg pr-2 cursor-pointer"
-                src={`../../public/${movie._id}.jpg`}
+                src={`/${movie._id}.jpg`}
                 alt={movie.title}
                 onClick={() => navigate(`/movies/${movie._id}`)}
               />
