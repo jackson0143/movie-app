@@ -38,8 +38,8 @@ export function ProfileMenu() {
           <p className="pl-1">{user.firstname || user.given_name}</p>
         </div>
       </MenuHandler>
-      <MenuList>
-        <MenuItem className="flex items-center gap-2">
+      <MenuList placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+        <MenuItem className="flex items-center gap-2"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
           <a className="flex items-center gap-2 " href="/profile">
             <svg
               width="16"
@@ -56,11 +56,11 @@ export function ProfileMenu() {
               />
             </svg>
 
-            <Typography className="font-medium text-m">My Profile</Typography>
+            <Typography className="font-medium text-m" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>My Profile</Typography>
           </a>
         </MenuItem>
 
-        <MenuItem className="flex items-center gap-2">
+        <MenuItem className="flex items-center gap-2"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
           <svg
             width="16"
             height="16"
@@ -76,11 +76,11 @@ export function ProfileMenu() {
             />
           </svg>
 
-          <Typography className="font-medium text-m">Edit Profile</Typography>
+          <Typography className="font-medium text-m" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Edit Profile</Typography>
         </MenuItem>
 
         <hr className="my-2 border-blue-gray-50" />
-        <MenuItem className="flex items-center gap-2">
+        <MenuItem className="flex items-center gap-2" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
           <a className="flex items-center gap-2 " onClick={logout} href="/">
             <svg
               width="16"
@@ -96,7 +96,7 @@ export function ProfileMenu() {
                 fill="#90A4AE"
               />
             </svg>
-            <Typography className="font-medium text-m">Sign Out</Typography>
+            <Typography className="font-medium text-m"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>Sign Out</Typography>
           </a>
         </MenuItem>
       </MenuList>

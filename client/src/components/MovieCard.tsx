@@ -46,9 +46,8 @@ function MovieCard({ movies }) {
 
               <div className="flex gap-3 py-2">
                 <p className="hover:text-violet-800">
-                  <a href="/u/team-tailwindflex" className="text-sm">
-                    {movie.description}
-                  </a>
+                <div className="text-gray-500">{movie.description}</div>
+                 
                 </p>
               </div>
 

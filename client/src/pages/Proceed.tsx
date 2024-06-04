@@ -83,7 +83,7 @@ function Proceed() {
                             viewBox="0 0 24 24"
                             stroke-width="1.5"
                             stroke="rgb(99 102 241)"
-                            class="size-10"
+                            className="size-10"
                           >
                             <path
                               stroke-linecap="round"
@@ -103,7 +103,7 @@ function Proceed() {
                             viewBox="0 0 24 24"
                             stroke-width="1.5"
                             stroke="rgb(99 102 241)"
-                            class="size-10"
+                            className="size-10"
                           >
                             <path
                               stroke-linecap="round"
@@ -126,7 +126,7 @@ function Proceed() {
             <p className="text-xl font-medium">Ticket Summary</p>
             <p className="text-gray-400">Check your tickets</p>
             <div className="mt-8 space-y-3 rounded-lg border bg-white px-2 py-4 sm:px-6">
-              {getTotal()<=0?"Your ticket cart is empty":(
+              {parseFloat(getTotal())<=0 ?"Your ticket cart is empty":(
               Object.keys(tickets)
                 .filter((type) => tickets[type] > 0)
                 .map((type) => (

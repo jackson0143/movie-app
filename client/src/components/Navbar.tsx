@@ -6,6 +6,7 @@ function Navbar() {
   const { logout } = useLogout();
   const { user } = useAuthContext();
 
+  console.log(typeof user)
   return (
     
     <nav>
