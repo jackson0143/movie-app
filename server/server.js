@@ -17,6 +17,7 @@ app.use(express.json());
 
 
 //Routes
+app.get('/', (req, res)=> res.status(200).json({message:"test"}))
 app.use('/api/movies', require('./routes/moviesRoute.js'))
 app.use('/api/users', require('./routes/userRoute.js'))
 app.use('/api/sessiontimes', require('./routes/sessionTimesRoute.js'))
