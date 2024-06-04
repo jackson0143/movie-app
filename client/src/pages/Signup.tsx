@@ -22,7 +22,7 @@ function Signup() {
     e.preventDefault();
     await signup(email, password, firstname, lastname);
   };
-
+  console.log
   return (
     <div className="max-w-lg mx-auto my-10 bg-white p-8 rounded-xl shadow shadow-slate-300">
       <h1 className="text-4xl font-medium">Sign up to an account</h1>
@@ -108,6 +108,7 @@ function Signup() {
             minLength={4}
             onChangeScore={(score) => {
               setInputScore(score);
+           
             }}
           />
           <label id="password-2">
