@@ -46,7 +46,7 @@ function MovieCard({ movies }) {
 
               <div className="flex gap-3 py-2">
                 <p className="hover:text-violet-800">
-                <div className="text-gray-500">{movie.description}</div>
+                <span className="text-gray-500">{movie.description}</span>
                  
                 </p>
               </div>

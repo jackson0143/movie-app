@@ -17,7 +17,7 @@ function NewMovie() {
 
     const movie = {title, length, date, description, rating}
     
-    const response = await fetch('http://localhost:5050/api/movies', {
+    const response = await fetch('/api/movies', {
       method:'POST',
       body: JSON.stringify(movie),
       headers:{

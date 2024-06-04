@@ -8,7 +8,7 @@ function Movies() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("http://localhost:5050/api/movies");
+      const response = await fetch("/api/movies");
       const json = await response.json();
 
       if (response.ok) {

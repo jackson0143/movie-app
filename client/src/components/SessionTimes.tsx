@@ -12,7 +12,7 @@ function SessionTimes() {
   
   useEffect(() => {
     const fetchSessionTime = async () => {
-      const response = await fetch(`http://localhost:5050/api/sessiontimes/${id}`);
+      const response = await fetch(`api/sessiontimes/${id}`);
       const json = await response.json();
 
       if (response.ok) {
