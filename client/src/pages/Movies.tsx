@@ -8,7 +8,10 @@ function Movies() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("/api/movies");
+
+      console.log(`${window.location.origin}/api/movies`)
+      const response = await fetch( "/api/movies");
+      
       const json = await response.json();
 
       if (response.ok) {
