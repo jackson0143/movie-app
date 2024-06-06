@@ -9,10 +9,10 @@ function SessionTimes() {
   const [sessionTime, setSessionTime] = useState(null);
 
   const { id } = useParams();
-  
+  const base_url = import.meta.env.VITE_BASE_URL
   useEffect(() => {
     const fetchSessionTime = async () => {
-      const response = await fetch(`api/sessiontimes/${id}`);
+      const response = await fetch(`${base_url}/api/sessiontimes/${id}`);
       const json = await response.json();
 
       if (response.ok) {
@@ -28,10 +28,6 @@ function SessionTimes() {
 
 
 
-
-if(sessionTime){
-  console.log(sessionTime)
-}
 
   //set date, and add 2, since we display today and tomorrow already
   const currentDate = new Date();

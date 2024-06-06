@@ -9,7 +9,7 @@ function SeatingSelection({ sessionTime }) {
 
   const [selectedSeat, setSeat] = useState({});
 
-  console.log(selectedSeat);
+
   return (
     <div className="bg-gray-200 p-4 py-10 rounded-md mr-4">
       {sessionTime.rowSeats.map((row) => (

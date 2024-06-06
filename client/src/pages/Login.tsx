@@ -8,9 +8,7 @@ import AppleIcon from "../../public/icons/AppleIcon";
 
 
 import { useGoogleLoginFunction } from "../hooks/useGoogleLogin";
-const responseFacebook = (response) => {
-  console.log(response);
-}
+
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

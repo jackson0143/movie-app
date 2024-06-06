@@ -11,7 +11,8 @@ function ContactUs() {
   const [error, setError] = useState("");
 
 
-
+  const publicKeyID = import.meta.env.VITE_PUBLIC_KEY
+  const serviceID = import.meta.env.VITE_SERVICE_KEY
   const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
 
@@ -20,8 +21,8 @@ function ContactUs() {
       return;
     }
     emailjs
-      .sendForm('service_6ez7559', 'template_rnsd60l', form.current, {
-        publicKey: 'LKs5nqDZ-DKuYw60u',
+      .sendForm(serviceID, 'template_rnsd60l', form.current, {
+        publicKey: publicKeyID,
       })
       .then(
         () => {

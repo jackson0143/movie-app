@@ -9,7 +9,7 @@ function NewMovie() {
   const [rating, setRating] = useState("");
   const [error, setError] = useState(null);
 
-
+  
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {

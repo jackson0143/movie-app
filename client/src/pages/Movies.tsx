@@ -1,16 +1,18 @@
 import { useState, useEffect } from "react";
 import MovieList from "../components/MovieList";
 import MovieCard from "../components/MovieCard";
-
+console.log(import.meta.env.VITE_APP_TITLE)
+//const base_url = import.meta.env.VITE_API_URL
 function Movies() {
   const [movies, setMovies] = useState(null);
   const [listState, setListState] = useState(false);
-
+  
+  const base_url = import.meta.env.VITE_BASE_URL
   useEffect(() => {
     const fetchData = async () => {
 
-      console.log(`${window.location.origin}/api/movies`)
-      const response = await fetch( "/api/movies");
+      
+      const response = await fetch(base_url+"/api/movies");
       
       const json = await response.json();
 
