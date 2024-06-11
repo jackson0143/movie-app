@@ -7,8 +7,9 @@ function NewMovie() {
   const [date, setDate] = useState("");
   const [description, setDescription] = useState("");
   const [rating, setRating] = useState("");
+  const [error, setError] = useState(null);
+
   const base_url = import.meta.env.VITE_BASE_URL
-  
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {

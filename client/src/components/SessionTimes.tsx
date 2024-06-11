@@ -1,15 +1,12 @@
 import { useState, useEffect } from "react";
 
-
 import { useParams } from "react-router-dom";
 import SeatingSelection from "./SeatingSelection";
 function SessionTimes() {
-
-
   const [sessionTime, setSessionTime] = useState(null);
 
   const { id } = useParams();
-  const base_url = import.meta.env.VITE_BASE_URL
+  const base_url = import.meta.env.VITE_BASE_URL;
   useEffect(() => {
     const fetchSessionTime = async () => {
       const response = await fetch(`${base_url}/api/sessiontimes/${id}`);
@@ -21,13 +18,6 @@ function SessionTimes() {
     };
     fetchSessionTime();
   }, [id]);
-
-
-
-
-
-
-
 
   //set date, and add 2, since we display today and tomorrow already
   const currentDate = new Date();
@@ -187,7 +177,6 @@ function SessionTimes() {
         </button>
 
         <div>
-
           {/* If the drawer is open, we can display */}
           {isDrawerOpen && (
             <div
@@ -211,12 +200,10 @@ function SessionTimes() {
             <button
               type="button"
               onClick={toggleDrawer}
-        
               className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white"
             >
               <svg
                 className="w-3 h-3"
-
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 14 14"
@@ -232,33 +219,19 @@ function SessionTimes() {
               <span className="sr-only">Close menu</span>
             </button>
 
-            <p className="mb-6 text-sm text-gray-500 dark:text-gray-400 w-[800px]">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            <p className="mb-6 text-sm text-gray-500 dark:text-gray-400 w-[1000px]">
               {/*DISPLAY MESSAGE HERE */}
-              {sessionTime&& <SeatingSelection sessionTime={sessionTime}></SeatingSelection>}
-
-
-
+              {sessionTime && (
+                <SeatingSelection sessionTime={sessionTime}></SeatingSelection>
+              )}
             </p>
-           
-            <a className="w-full py-3 font-medium text-white bg-indigo-600 hover:bg-indigo-500 rounded-lg border-indigo-500 hover:shadow inline-flex space-x-2 items-center justify-center"
-            href="/proceed"
+
+            <a
+              className="w-full py-3 font-medium text-white bg-indigo-600 hover:bg-indigo-500 rounded-lg border-indigo-500 hover:shadow inline-flex space-x-2 items-center justify-center"
+              href="/proceed"
             >
-            PROCEED
-          </a>        
+              PROCEED
+            </a>
           </div>
         </div>
       </div>
