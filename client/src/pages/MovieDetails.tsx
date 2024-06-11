@@ -8,10 +8,11 @@ function MovieDetails() {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
   const [isOpen, setOpen] = useState(false);
+  const base_url = import.meta.env.VITE_BASE_URL
 
   useEffect(() => {
     const fetchMovie = async () => {
-      const response = await fetch(`/api/movies/${id}`);
+      const response = await fetch(base_url + `/api/movies/${id}`);
       const json = await response.json();
 
       if (response.ok) {

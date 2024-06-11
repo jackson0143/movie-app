@@ -7,8 +7,7 @@ function NewMovie() {
   const [date, setDate] = useState("");
   const [description, setDescription] = useState("");
   const [rating, setRating] = useState("");
-  const [error, setError] = useState(null);
-
+  const base_url = import.meta.env.VITE_BASE_URL
   
   const navigate = useNavigate();
 
@@ -17,7 +16,7 @@ function NewMovie() {
 
     const movie = {title, length, date, description, rating}
     
-    const response = await fetch('/api/movies', {
+    const response = await fetch(base_url+'/api/movies', {
       method:'POST',
       body: JSON.stringify(movie),
       headers:{
