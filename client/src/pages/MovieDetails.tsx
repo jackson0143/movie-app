@@ -41,7 +41,7 @@ function MovieDetails() {
           <div className="flex flex-row p-12 bg-white border border-gray-200 rounded-lg shadow-lg">
             <img
               className="w-auto h-auto rounded-lg pr-2"
-              src={`../../public/${movie._id}.jpg`}
+              src={`/${movie._id}.jpg`}
               alt={movie.title}
             />
             <div className="ml-4">
